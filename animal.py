@@ -39,5 +39,12 @@ class Animal:
     def set_animal_health_status(self, animal_health_status, status):
         self.__animal_health_status = status
 
+    name = property(get_name, set_name)
+    species = property(get_species, set_species)
+    age = property(get_age, set_age)
+    dietary_needs = property(get_dietary_needs, set_dietary_needs)
+    animal_health_status = property(get_animal_health_status,set_animal_health_status)
+
+
 
 
