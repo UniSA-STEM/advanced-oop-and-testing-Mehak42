@@ -58,5 +58,20 @@ class Animal:
         return (f"{self.__name} is {self.__species} and is {self.__age} years old. Dietary needs: {self.__dietary_needs}."
                 f"Health status: {self.__animal_health_status}.")
 
+class Mammal(Animal):
+    def __init__(self, name, species, age, dietary_needs, animal_health_status, have_fur_type):
+        super().__init__(name, species, age, dietary_needs, animal_health_status)
+        self.have_fur_type = have_fur_type
+
+    def make_sound(self):
+        print(f"{self.__name} the {self.__species} whines gently.")
+
+    def feed_milk(self):
+        print(f"{self.__name} feed the milk to their young ones.")
+
+    def __str__(self):
+        return super().__str__() + f"Fur type: {self.have_fur_type}"
+
+
 
 
