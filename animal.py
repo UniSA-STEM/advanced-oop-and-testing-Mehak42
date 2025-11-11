@@ -45,6 +45,18 @@ class Animal:
     dietary_needs = property(get_dietary_needs, set_dietary_needs)
     animal_health_status = property(get_animal_health_status,set_animal_health_status)
 
+    def make_sound(self):
+        print(f"{self.__name} the {self.__species} makes a sound")
+
+    def eat(self):
+        print(f"{self.__name} is eating {self.__dietary_needs} food.")
+
+    def sleep(self):
+        print(f"{self.__name} is sleeping at the moment.")
+
+    def __str__(self):
+        return (f"{self.__name} is {self.__species} and is {self.__age} years old. Dietary needs: {self.__dietary_needs}."
+                f"Health status: {self.__animal_health_status}.")
 
 
 
