@@ -78,7 +78,7 @@ class Reptile(Animal):
         self.__scale_type = scale_type
 
     def make_sound(self):
-        print(f"{self.__name} makes hiss sound.")
+        print(f"{self.__name} the {self.__species} makes hiss sound.")
 
     def shed_skin(self):
         print(f"{self.__name} is shedding its {self.__scale_type} scale.")
@@ -86,7 +86,23 @@ class Reptile(Animal):
     def __str__(self):
         return super().__str__() + f" Has {self.__scale_type} scales."
 
+class Bird(Animal):
+    def __init__(self, name, species, age, dietary_needs, animal_health_status, can_fly):
+        super().__init__(name, species, age, dietary_needs, animal_health_status)
+        self.__can_fly = can_fly
 
+    def make_sound(self):
+        print(f"{self.__name} the {self.__species} chirps.")
+
+    def fly(self):
+        if self.__can_fly:
+            print(f"{self.__name} is flying in the sky.")
+        else:
+            print(f"{self.__name} cannot fly.")
+
+    def __str__(self):
+        fly_or_not = "can fly" if self.__can_fly else "cannot fly"
+        return super().__str__() + f" This bird {fly_or_not}."
 
 
 
