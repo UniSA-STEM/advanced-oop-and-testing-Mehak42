@@ -36,7 +36,7 @@ class Animal:
             print("Invalid age")
     def set_dietary_needs(self, dietary_needs):
         self.__dietary_needs = dietary_needs
-    def set_animal_health_status(self, animal_health_status, status):
+    def set_animal_health_status(self, status):
         self.__animal_health_status = status
 
     name = property(get_name, set_name)
@@ -46,17 +46,17 @@ class Animal:
     animal_health_status = property(get_animal_health_status,set_animal_health_status)
 
     def make_sound(self):
-        print(f"{self.__name} the {self.__species} makes a sound")
+        print(f"{self.get_name()} the {self.get_species()} makes a sound")
 
     def eat(self):
-        print(f"{self.__name} is eating {self.__dietary_needs} food.")
+        print(f"{self.get_name()} is eating {self.get_dietary_needs()} food.")
 
     def sleep(self):
-        print(f"{self.__name} is sleeping at the moment.")
+        print(f"{self.get_name()} is sleeping at the moment.")
 
     def __str__(self):
-        return (f"{self.__name} is {self.__species} and is {self.__age} years old. Dietary needs: {self.__dietary_needs}."
-                f"Health status: {self.__animal_health_status}.")
+        return (f"{self.get_name()} is {self.get_species()} and is {self.get_age()} years old. Dietary needs: {self.get_dietary_needs()}."
+                f"Health status: {self.get_animal_health_status()}.")
 
 class Mammal(Animal):
     def __init__(self, name, species, age, dietary_needs, animal_health_status, have_fur_type):
@@ -64,13 +64,13 @@ class Mammal(Animal):
         self.__have_fur_type = have_fur_type
 
     def make_sound(self):
-        print(f"{self.__name} the {self.__species} whines gently.")
+        print(f"{self.get_name()} the {self.get_species()} whines gently.")
 
     def feed_milk(self):
-        print(f"{self.__name} feed the milk to their young ones.")
+        print(f"{self.get_name()} feed the milk to their young ones.")
 
     def __str__(self):
-        return super().__str__() + f"Fur type: {self.__have_fur_type}"
+        return super().__str__() + f" Fur type: {self.__have_fur_type}"
 
 class Reptile(Animal):
     def __init__(self, name, species, age, dietary_needs, animal_health_status, scale_type):
@@ -78,10 +78,10 @@ class Reptile(Animal):
         self.__scale_type = scale_type
 
     def make_sound(self):
-        print(f"{self.__name} the {self.__species} makes hiss sound.")
+        print(f"{self.get_name()} the {self.get_species()} makes hiss sound.")
 
     def shed_skin(self):
-        print(f"{self.__name} is shedding its {self.__scale_type} scale.")
+        print(f"{self.get_name()} is shedding its {self.__scale_type} scale.")
 
     def __str__(self):
         return super().__str__() + f" Has {self.__scale_type} scales."
@@ -92,13 +92,13 @@ class Bird(Animal):
         self.__can_fly = can_fly
 
     def make_sound(self):
-        print(f"{self.__name} the {self.__species} chirps.")
+        print(f"{self.get_name()} the {self.get_species()} chirps.")
 
     def fly(self):
         if self.__can_fly:
-            print(f"{self.__name} is flying in the sky.")
+            print(f"{self.get_name()} is flying in the sky.")
         else:
-            print(f"{self.__name} cannot fly.")
+            print(f"{self.get_name()} cannot fly.")
 
     def __str__(self):
         fly_or_not = "can fly" if self.__can_fly else "cannot fly"
