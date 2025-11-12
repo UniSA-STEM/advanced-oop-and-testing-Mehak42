@@ -61,7 +61,7 @@ class Animal:
 class Mammal(Animal):
     def __init__(self, name, species, age, dietary_needs, animal_health_status, have_fur_type):
         super().__init__(name, species, age, dietary_needs, animal_health_status)
-        self.have_fur_type = have_fur_type
+        self.__have_fur_type = have_fur_type
 
     def make_sound(self):
         print(f"{self.__name} the {self.__species} whines gently.")
@@ -70,7 +70,23 @@ class Mammal(Animal):
         print(f"{self.__name} feed the milk to their young ones.")
 
     def __str__(self):
-        return super().__str__() + f"Fur type: {self.have_fur_type}"
+        return super().__str__() + f"Fur type: {self.__have_fur_type}"
+
+class Reptile(Animal):
+    def __init__(self, name, species, age, dietary_needs, animal_health_status, scale_type):
+        super().__init__(name, species, age, dietary_needs, animal_health_status)
+        self.__scale_type = scale_type
+
+    def make_sound(self):
+        print(f"{self.__name} makes hiss sound.")
+
+    def shed_skin(self):
+        print(f"{self.__name} is shedding its {self.__scale_type} scale.")
+
+    def __str__(self):
+        return super().__str__() + f" Has {self.__scale_type} scales."
+
+
 
 
 
