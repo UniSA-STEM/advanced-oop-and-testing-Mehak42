@@ -17,4 +17,20 @@ class Enclosure:
 
     def get_name(self):
         return self.__name
+    def get_size(self):
+        return self.__size
+    def get_environment_type(self):
+        return self.__environment_type
+    def get_cleanliness_level(self):
+        return self.__cleanliness_level
+    def get_animals(self):
+        return self.__animals
+    def set_cleanliness_level(self, level):
+        if level > 0 or level <= 100:
+            self.__cleanliness_level = level
+        else:
+            print("Invalid cleanliness_level")
+
+
+
 
