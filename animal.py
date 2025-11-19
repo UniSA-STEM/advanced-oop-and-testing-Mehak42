@@ -7,6 +7,29 @@ Username: tiwmy001
 This is my own work as defined by the University's Academic Integrity Policy.
 '''
 
+class HealthIssue:
+    def __init__(self, description, date_reported, severity_level, treatment_notes = None):
+        self.__description = description
+        self.__date_reported = date_reported
+        self.__severity_level = severity_level
+        self.__treatment_notes = treatment_notes
+
+    def get_description(self):
+        return self.__description
+    def get_date_reported(self):
+        return self.__date_reported
+    def get_severity_level(self):
+        return self.__severity_level
+    def get_treatment_notes(self):
+        return self.__treatment_notes
+
+    def set_treatment_notes(self, notes):
+        self.__treatment_notes = notes
+
+    def __str__(self):
+        return (f"Health Issue: {self.__description}, Date: {self.__date_reported}, "
+                f"Severity Level: {self.__severity_level}, Treatment Notes: {self.__treatment_notes}")
+
 class Animal:
     def __init__(self, name, species, age, dietary_needs, animal_health_status):
         self.__name = name
@@ -14,6 +37,8 @@ class Animal:
         self.__age = age
         self.__dietary_needs = dietary_needs
         self.__animal_health_status = animal_health_status
+
+        self.__health_issues = []
 
     def get_name(self):
         return self.__name
