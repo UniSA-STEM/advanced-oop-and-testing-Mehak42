@@ -70,6 +70,22 @@ class Animal:
     dietary_needs = property(get_dietary_needs, set_dietary_needs)
     animal_health_status = property(get_animal_health_status,set_animal_health_status)
 
+    """Methods for health management"""
+
+    def add_health_issue(self, health_issue):
+        if isinstance(health_issue, HealthIssue):
+            self.__health_issues.append(health_issue)
+            print(f"Added Health Issue for {self.get_name()}")
+        else:
+            print("Invalid Health Issue")
+
+    def generate_list_of_health_issues(self):
+        print(f"Generating list of Health Issues for {self.get_name()}")
+        if not self.__health_issues:
+            print("No Health Issues generated.")
+        for problems in self.__health_issues:
+            print(problems)
+
     def make_sound(self):
         print(f"{self.get_name()} the {self.get_species()} makes a sound")
 
