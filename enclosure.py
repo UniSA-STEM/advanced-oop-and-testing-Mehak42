@@ -31,6 +31,13 @@ class Enclosure:
         else:
             print("Invalid cleanliness_level")
 
+    name = property(get_name)
+    size = property(get_size)
+    environment_type = property(get_environment_type)
+    cleanliness_level = property(get_cleanliness_level, set_cleanliness_level())
+    animals = property(get_animals)
+
+
 
 
 
