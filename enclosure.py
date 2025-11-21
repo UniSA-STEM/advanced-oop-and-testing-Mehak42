@@ -59,6 +59,15 @@ class Enclosure:
         return True
 
     def add_animal(self, animal):
+        if self.check_animal_compatibility(animal):
+            self.__animals.append(animal)
+
+            if self.__species_allowed is None:
+                self.__species_allowed = animal.species
+
+            print(f"{animal.name} has been added to the Enclosure {self.__name}")
+        else:
+            print(f"{animal.name} could not be added to the Enclosure {self.__name}")
 
 
 
