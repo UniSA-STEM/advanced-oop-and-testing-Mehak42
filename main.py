@@ -17,3 +17,7 @@ leo.make_sound()
 leo.eat()
 leo.sleep()
 
+print("\n--- Adding Health issue to an animal ---")
+injury = HealthIssue("Leg Injury", "2024-11-20", "High", "Bandaged and resting")
+leo.add_health_issue(injury)
+leo.generate_list_of_health_issues()
