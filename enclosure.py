@@ -88,6 +88,11 @@ class Enclosure:
             for x in self.__animals:
                 print(f"{x.name} ({x.species}), Health: {x.animal_health_status}")
 
+    def __str__(self):
+        return (f"Enclosure: '{self.__name}' [{self.__environment_type}] "
+                f"Cleanliness level: {self.__cleanliness_level}"
+                f"Animals: {len(self.__animals)}"
+                f"Total Size: {self.__size}")
 
 
 
