@@ -76,6 +76,10 @@ class Enclosure:
         else:
             print(f"{animal.name} is not found the Enclosure {self.__name}")
 
+    def clean_enclosures(self):
+        self.__cleanliness_level = "Clean"
+        print("Enclosure '{self.__name}' has been cleaned.")
+
 
 
 
