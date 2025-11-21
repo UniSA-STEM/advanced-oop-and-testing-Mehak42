@@ -37,7 +37,7 @@ class Enclosure:
     name = property(get_name)
     size = property(get_size)
     environment_type = property(get_environment_type)
-    cleanliness_level = property(get_cleanliness_level, set_cleanliness_level())
+    cleanliness_level = property(get_cleanliness_level, set_cleanliness_level)
     animals = property(get_animals)
 
     def check_animal_compatibility(self, animal):
@@ -70,7 +70,7 @@ class Enclosure:
             print(f"{animal.name} could not be added to the Enclosure {self.__name}")
 
     def remove_animal(self, animal):
-        if self.check_animal_compatibility(animal):
+        if animal in self.__animals:
             self.__animals.remove(animal)
             print(f"{animal.name} has been removed from the Enclosure {self.__name}")
         else:
@@ -78,7 +78,7 @@ class Enclosure:
 
     def clean_enclosures(self):
         self.__cleanliness_level = "Clean"
-        print("Enclosure '{self.__name}' has been cleaned.")
+        print(f"Enclosure '{self.__name}' has been cleaned.")
 
     def list_animals(self):
         print(f"\nTotal number of Animals in {self.__name} Enclosure:")
@@ -90,9 +90,9 @@ class Enclosure:
 
     def __str__(self):
         return (f"Enclosure: '{self.__name}' [{self.__environment_type}] "
-                f"Cleanliness level: {self.__cleanliness_level}"
-                f"Animals: {len(self.__animals)}"
-                f"Total Size: {self.__size}")
+                f"\nCleanliness level: {self.__cleanliness_level}"
+                f"\nAnimals: {len(self.__animals)}"
+                f"\nTotal Size: {self.__size}")
 
 
 
