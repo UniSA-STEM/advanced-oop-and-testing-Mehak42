@@ -80,6 +80,14 @@ class Enclosure:
         self.__cleanliness_level = "Clean"
         print("Enclosure '{self.__name}' has been cleaned.")
 
+    def list_animals(self):
+        print(f"\nTotal number of Animals in {self.__name} Enclosure:")
+        if len(self.__animals) == 0:
+            print("There are no animals in the Enclosure {self.__name}")
+        else:
+            for x in self.__animals:
+                print(f"{x.name} ({x.species}), Health: {x.animal_health_status}")
+
 
 
 
