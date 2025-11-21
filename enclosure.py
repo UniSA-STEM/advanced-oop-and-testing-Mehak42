@@ -69,5 +69,14 @@ class Enclosure:
         else:
             print(f"{animal.name} could not be added to the Enclosure {self.__name}")
 
+    def remove_animal(self, animal):
+        if self.check_animal_compatibility(animal):
+            self.__animals.remove(animal)
+            print(f"{animal.name} has been removed from the Enclosure {self.__name}")
+        else:
+            print(f"{animal.name} is not found the Enclosure {self.__name}")
+
+
+
 
 
