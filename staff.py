@@ -58,6 +58,13 @@ class Zookeeper(Staff):
         else:
             print("Invalid animal")
 
+    def clean_enclosure(self, enclosure):
+        if isinstance(enclosure, Enclosure):
+            enclosure.clean_enclosures()
+            print(f"{self.get_name()} cleaned enclosure {enclosure.name}")
+        else:
+            print("Invalid enclosure")
+
 
 
 
