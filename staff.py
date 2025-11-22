@@ -40,6 +40,13 @@ class Staff:
         else:
             print("No enclosure assigned")
 
+    def do_duties(self):
+        print(f"{self.get_name()} performs staff duties.")
+
+    def __str__(self):
+        return f"Staff: {self.get_name()}, role: {self.get_role()}"
+
+
 
 
 
