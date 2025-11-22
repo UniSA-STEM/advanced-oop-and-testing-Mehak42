@@ -68,6 +68,11 @@ class Zookeeper(Staff):
     def do_duties(self):
         print(f"{self.get_name()} performs zookeeper duties which are feeding and cleaning.")
 
+class Veterinarian(Staff):
+    def __init__(self, name):
+        super().__init__(name, "Veterinarian")
+
+
 
 
 
