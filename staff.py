@@ -72,6 +72,12 @@ class Veterinarian(Staff):
     def __init__(self, name):
         super().__init__(name, "Veterinarian")
 
+    def conduct_heath_checks(self, animal):
+        if isinstance(animal, Animal):
+            print(f"{self.get_name()} conducts health checks for {animal.name}")
+            animal.generate_list_of_health_issues()
+        else:
+            print("Invalid animal")
 
 
 
