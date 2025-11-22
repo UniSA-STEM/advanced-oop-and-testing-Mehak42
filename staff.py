@@ -87,6 +87,8 @@ class Veterinarian(Staff):
         else:
             print("Invalid animal")
 
+    def do_duties(self):
+        print(f"{self.get_name()} performs veterinarian duties which are checking and giving health treatments.")
 
 
 
