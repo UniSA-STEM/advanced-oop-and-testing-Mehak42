@@ -1,5 +1,5 @@
 '''
-File: filename.py
+File: main.py
 Description: This is the main class where i will be testing all 3 classes together
 Author: Mehakdeep kaur Tiwana
 ID: 110397073
