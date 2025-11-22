@@ -29,9 +29,18 @@ class Staff:
     def assign_animal(self, animal):
         if isinstance(animal, Animal):
             self.__assigned_animals.append(animal)
-            print(f"{self.__name} has been assigned to {animal.name}")
+            print(f"{self.get_name()} has been assigned to {animal.name}.")
         else:
             print("No animal assigned")
+
+    def assign_enclosure(self, enclosure):
+        if isinstance(enclosure, Enclosure):
+            self.__assigned_enclosures.append(enclosure)
+            print(f"{self.get_name()} has been assigned to {enclosure.name}.")
+        else:
+            print("No enclosure assigned")
+
+
 
 
 
