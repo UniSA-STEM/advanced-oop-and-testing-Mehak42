@@ -1,5 +1,5 @@
 '''
-File: filename.py
+File: enclosure.py
 Description: Defines Enclosure class used to house animals in the zoo.
 Author: Mehakdeep Kaur Tiwana
 ID: 110397073
