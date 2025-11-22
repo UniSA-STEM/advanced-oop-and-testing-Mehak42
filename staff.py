@@ -17,5 +17,7 @@ class Staff:
         self.__assigned_animals = []
         self.__assigned_enclosures = []
 
+    def get_name(self):
+
 
 
