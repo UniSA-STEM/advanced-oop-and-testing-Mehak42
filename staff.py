@@ -79,6 +79,18 @@ class Veterinarian(Staff):
         else:
             print("Invalid animal")
 
+    def treat_animal(self, animal):
+        if isinstance(animal, Animal):
+            new_health_issue = HealthIssue("Treatment and ointments applied", "Today", "Low", "Needs resting")
+            animal.add_health_issue(new_health_issue)
+            print(f"{self.get_name()} treated {animal.name}.")
+        else:
+            print("Invalid animal")
+
+
+
+
+
 
 
 
