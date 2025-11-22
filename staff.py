@@ -47,6 +47,11 @@ class Staff:
         return f"Staff: {self.get_name()}, role: {self.get_role()}"
 
 
+class Zookeeper(Staff):
+    def __init__(self, name):
+        super().__init__(name, "Zookeeper")
+
+
 
 
 
