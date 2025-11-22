@@ -65,6 +65,10 @@ class Zookeeper(Staff):
         else:
             print("Invalid enclosure")
 
+    def do_duties(self):
+        print(f"{self.get_name()} performs zookeeper duties which are feeding and cleaning.")
+
+
 
 
 
