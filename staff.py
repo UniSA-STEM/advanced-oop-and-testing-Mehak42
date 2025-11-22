@@ -51,6 +51,15 @@ class Zookeeper(Staff):
     def __init__(self, name):
         super().__init__(name, "Zookeeper")
 
+    def feed_animal(self, animal):
+        if isinstance(animal, Animal):
+            print(f"{self.get_name()} feeds {animal.name} which is {animal.species}.")
+            animal.eat()
+        else:
+            print("Invalid animal")
+
+
+
 
 
 
