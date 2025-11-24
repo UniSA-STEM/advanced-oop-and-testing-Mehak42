@@ -77,7 +77,7 @@ class Veterinarian(Staff):
             print(f"{self.get_name()} conducts health checks for {animal.name}")
             animal.generate_list_of_health_issues()
         else:
-            print("Invalid animal")
+            print("Invalid animal.")
 
     def treat_animal(self, animal):
         if isinstance(animal, Animal):
