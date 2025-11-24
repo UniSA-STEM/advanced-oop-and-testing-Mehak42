@@ -13,7 +13,7 @@ from staff import Staff, Zookeeper, Veterinarian
 
 print("\n========== ZOO SYSTEM DEMONSTRATION ==========\n")
 
-# 1. TESTING ANIMAL CREATION & SUBCLASSES
+"""TESTING ANIMAL CREATION & SUBCLASSES"""
 
 print("\n--- Testing Animal Creation ---")
 simba = Mammal("Simba", "Lion", 5, "Meat", "Healthy", "Golden Fur")
@@ -34,8 +34,7 @@ parrot.make_sound()
 parrot.fly()
 
 
-
-# 2. TESTING HEALTH ISSUES
+""" 2. TESTING HEALTH ISSUES"""
 
 print("\n--- Testing Health Issues ---")
 issue1 = HealthIssue("Leg Injury", "2025-11-20", "High", "Bandaged and resting")
@@ -43,7 +42,7 @@ simba.add_health_issue(issue1)
 simba.generate_list_of_health_issues()
 
 
-# 3. TESTING ENCLOSURE
+""" 3. TESTING ENCLOSURE """
 
 print("\n--- Testing Enclosure ---")
 savannah = Enclosure("Savannah Habitat", 2, "Savannah")
@@ -65,35 +64,35 @@ print("\n--- Cleaning Enclosure ---")
 savannah.clean_enclosures()
 print(savannah)
 
-# 4. TESTING STAFF
+""" 4. TESTING STAFF """
 
 print("\n--- Testing Staff ---")
 
-# Create staff
+""" Create staff """
 zoo_keeper = Zookeeper("Kristin")
 vet = Veterinarian("Dr. Jack")
 
 print(zoo_keeper)
 print(vet)
 
-# Assign responsibilities
+""" Assign responsibilities """
 zoo_keeper.assign_enclosure(savannah)
 zoo_keeper.assign_animal(mufasa)
 zoo_keeper.assign_animal(snake)
 vet.assign_animal(mufasa)
 
-# Staff performing duties
+""" Staff performing duties """
 print("\n--- Staff Performing Duties ---")
 zoo_keeper.do_duties()
 vet.do_duties()
 
-# Feeding + cleaning
+""" Feeding + cleaning """
 print("\n--- Zookeeper Actions ---")
 zoo_keeper.feed_animal(mufasa)
 zoo_keeper.feed_animal(snake)
 zoo_keeper.clean_enclosure(savannah)
 
-# Veterinary actions
+""" Veterinary actions """
 print("\n--- Vet Actions ---")
 vet.conduct_health_checks(mufasa)
 vet.treat_animal(mufasa)
