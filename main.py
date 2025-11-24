@@ -13,8 +13,6 @@ from staff import Staff, Zookeeper, Veterinarian
 
 print("\n========== ZOO SYSTEM DEMONSTRATION ==========\n")
 
-
-
 # 1. TESTING ANIMAL CREATION & SUBCLASSES
 
 print("\n--- Testing Animal Creation ---")
@@ -67,4 +65,39 @@ print("\n--- Cleaning Enclosure ---")
 savannah.clean_enclosures()
 print(savannah)
 
+# 4. TESTING STAFF
 
+print("\n--- Testing Staff ---")
+
+# Create staff
+zoo_keeper = Zookeeper("Kristin")
+vet = Veterinarian("Dr. Jack")
+
+print(zoo_keeper)
+print(vet)
+
+# Assign responsibilities
+zoo_keeper.assign_enclosure(savannah)
+zoo_keeper.assign_animal(mufasa)
+zoo_keeper.assign_animal(snake)
+vet.assign_animal(mufasa)
+
+# Staff performing duties
+print("\n--- Staff Performing Duties ---")
+zoo_keeper.do_duties()
+vet.do_duties()
+
+# Feeding + cleaning
+print("\n--- Zookeeper Actions ---")
+zoo_keeper.feed_animal(mufasa)
+zoo_keeper.feed_animal(snake)
+zoo_keeper.clean_enclosure(savannah)
+
+# Veterinary actions
+print("\n--- Vet Actions ---")
+vet.conduct_health_checks(mufasa)
+vet.treat_animal(mufasa)
+mufasa.generate_list_of_health_issues()
+
+
+print("\n========== END ==========\n")
