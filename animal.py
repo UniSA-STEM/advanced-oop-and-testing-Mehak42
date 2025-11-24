@@ -8,12 +8,14 @@ This is my own work as defined by the University's Academic Integrity Policy.
 '''
 
 class HealthIssue:
+    """Represents a single health issue for an animal."""
     def __init__(self, description, date_reported, severity_level, treatment_notes = None):
         self.__description = description
         self.__date_reported = date_reported
         self.__severity_level = severity_level
         self.__treatment_notes = treatment_notes
 
+    """getters and setters"""
     def get_description(self):
         return self.__description
     def get_date_reported(self):
@@ -30,6 +32,7 @@ class HealthIssue:
         return (f"Health Issue: {self.__description}, Date: {self.__date_reported}, "
                 f"Severity Level: {self.__severity_level}, Treatment Notes: {self.__treatment_notes}")
 
+"""BASE CLASS ANIMAL (PARENT CLASS FOR MAMMAL, BIRD, REPLTILE"""
 class Animal:
     def __init__(self, name, species, age, dietary_needs, animal_health_status):
         self.__name = name
@@ -73,6 +76,7 @@ class Animal:
     """Methods for health management"""
 
     def add_health_issue(self, health_issue):
+        """adds a health issue to the list of health issues."""
         if isinstance(health_issue, HealthIssue):
             self.__health_issues.append(health_issue)
             print(f"Added Health Issue for {self.get_name()}")
@@ -80,6 +84,7 @@ class Animal:
             print("Invalid Health Issue")
 
     def generate_list_of_health_issues(self):
+        """generates a list of health issues."""
         print(f"Generating list of Health Issues for {self.get_name()}")
         if not self.__health_issues:
             print("No Health Issues generated.")
@@ -87,6 +92,7 @@ class Animal:
             print(problems)
 
     def make_sound(self):
+        """general sound the animals make"""
         print(f"{self.get_name()} the {self.get_species()} makes a sound")
 
     def eat(self):
@@ -100,14 +106,17 @@ class Animal:
                 f"Health status: {self.get_animal_health_status()}.")
 
 class Mammal(Animal):
+    """SUBCLASS OF ANIMAL"""
     def __init__(self, name, species, age, dietary_needs, animal_health_status, have_fur_type):
         super().__init__(name, species, age, dietary_needs, animal_health_status)
         self.__have_fur_type = have_fur_type
 
     def make_sound(self):
+        """Polymorphic method for making animal sound"""
         print(f"{self.get_name()} the {self.get_species()} whines gently.")
 
     def feed_milk(self):
+        """unique behaviour of mammals"""
         print(f"{self.get_name()} feed the milk to their young ones.")
 
     def __str__(self):

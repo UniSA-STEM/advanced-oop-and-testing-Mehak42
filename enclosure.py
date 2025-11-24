@@ -29,6 +29,7 @@ class Enclosure:
     def get_animals(self):
         return self.__animals
     def set_cleanliness_level(self, level):
+        """Sets cleanliness level"""
         if level > 0 or level <= 100:
             self.__cleanliness_level = level
         else:
@@ -41,15 +42,19 @@ class Enclosure:
     animals = property(get_animals)
 
     def check_animal_compatibility(self, animal):
+        """checks if animal is compatible with this enclosure"""
 
+        """makes sure only animal objects are added"""
         if not isinstance(animal, Animal):
             print("Only animals allowed")
             return False
 
+        """checking the space availability in enclosure"""
         if len(self.__animals) >= self.__size:
             print(f"Enclosure '{self.__name}' is fully packed. ")
             return False
 
+        """if no animals yet, first animal sets the species rule"""
         if self.__species_allowed is None:
             return True
 
@@ -59,6 +64,7 @@ class Enclosure:
         return True
 
     def add_animal(self, animal):
+        """adds an animal to the enclosure"""
         if self.check_animal_compatibility(animal):
             self.__animals.append(animal)
 
@@ -70,6 +76,7 @@ class Enclosure:
             print(f"{animal.name} could not be added to the Enclosure {self.__name}")
 
     def remove_animal(self, animal):
+        """removes an animal from the enclosure"""
         if animal in self.__animals:
             self.__animals.remove(animal)
             print(f"{animal.name} has been removed from the Enclosure {self.__name}")
@@ -77,10 +84,12 @@ class Enclosure:
             print(f"{animal.name} is not found the Enclosure {self.__name}")
 
     def clean_enclosures(self):
+        """cleans the enclosure"""
         self.__cleanliness_level = "Clean"
         print(f"Enclosure '{self.__name}' has been cleaned.")
 
     def list_animals(self):
+        """prints all the animals in the enclosure"""
         print(f"\nTotal number of Animals in {self.__name} Enclosure:")
         if len(self.__animals) == 0:
             print("There are no animals in the Enclosure {self.__name}")
@@ -89,6 +98,7 @@ class Enclosure:
                 print(f"{x.name} ({x.species}), Health: {x.animal_health_status}")
 
     def __str__(self):
+        """provides a string representation of the enclosure"""
         return (f"Enclosure: '{self.__name}' [{self.__environment_type}] "
                 f"\nCleanliness level: {self.__cleanliness_level}"
                 f"\nAnimals: {len(self.__animals)}"

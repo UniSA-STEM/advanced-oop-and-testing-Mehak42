@@ -14,6 +14,8 @@ class Staff:
     def __init__(self, name, role):
         self.__name = name
         self.__role = role
+
+        """staff has assigned animals and enclosures"""
         self.__assigned_animals = []
         self.__assigned_enclosures = []
 
@@ -27,6 +29,7 @@ class Staff:
         return self.__assigned_enclosures
 
     def assign_animal(self, animal):
+        """assigns animal to staff member"""
         if isinstance(animal, Animal):
             self.__assigned_animals.append(animal)
             print(f"{self.get_name()} has been assigned to {animal.name}.")
@@ -34,6 +37,7 @@ class Staff:
             print("No animal assigned")
 
     def assign_enclosure(self, enclosure):
+        """assigns enclosure to staff member"""
         if isinstance(enclosure, Enclosure):
             self.__assigned_enclosures.append(enclosure)
             print(f"{self.get_name()} has been assigned to {enclosure.name}.")
@@ -41,6 +45,7 @@ class Staff:
             print("No enclosure assigned")
 
     def do_duties(self):
+        """general duties performed by staff"""
         print(f"{self.get_name()} performs staff duties.")
 
     def __str__(self):
@@ -52,6 +57,7 @@ class Zookeeper(Staff):
         super().__init__(name, "Zookeeper")
 
     def feed_animal(self, animal):
+        """feeds the assigned animal"""
         if isinstance(animal, Animal):
             print(f"{self.get_name()} feeds {animal.name} which is {animal.species}.")
             animal.eat()
@@ -59,6 +65,7 @@ class Zookeeper(Staff):
             print("Invalid animal")
 
     def clean_enclosure(self, enclosure):
+        """cleans enclosure"""
         if isinstance(enclosure, Enclosure):
             enclosure.clean_enclosures()
             print(f"{self.get_name()} cleaned enclosure {enclosure.name}")
@@ -66,6 +73,7 @@ class Zookeeper(Staff):
             print("Invalid enclosure")
 
     def do_duties(self):
+        """overrides staff.do_duties()"""
         print(f"{self.get_name()} performs zookeeper duties which are feeding and cleaning.")
 
 class Veterinarian(Staff):
@@ -73,6 +81,7 @@ class Veterinarian(Staff):
         super().__init__(name, "Veterinarian")
 
     def conduct_health_checks(self, animal):
+        """do health checks on animals"""
         if isinstance(animal, Animal):
             print(f"{self.get_name()} conducts health checks for {animal.name}")
             animal.generate_list_of_health_issues()
@@ -80,6 +89,7 @@ class Veterinarian(Staff):
             print("Invalid animal.")
 
     def treat_animal(self, animal):
+        """treats animals and add it to health issues list"""
         if isinstance(animal, Animal):
             new_health_issue = HealthIssue("Treatment and ointments applied", "Today", "Low", "Needs resting")
             animal.add_health_issue(new_health_issue)
@@ -88,6 +98,7 @@ class Veterinarian(Staff):
             print("Invalid animal")
 
     def do_duties(self):
+        """overrides staff.do_duties()"""
         print(f"{self.get_name()} performs veterinarian duties which are checking and giving health treatments.")
 
 
